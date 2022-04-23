@@ -5,8 +5,14 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
 const routes: Routes = [
     {
         path: '', 
-        pathMatch: 'full', 
         component: AppLayoutComponent,
+        children: [
+            {
+                path: 'pages', 
+                loadChildren: () => 
+                    import('./modules/@pages/pages.module').then(m => m.PagesModule)
+            }
+        ]
     },
 ];
 

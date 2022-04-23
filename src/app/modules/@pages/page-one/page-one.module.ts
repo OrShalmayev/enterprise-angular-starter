@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { PageOneComponent } from './page-one.component';
 import { RouterModule } from '@angular/router';
 
+const ROUTES = [
+    {path: '', component: PageOneComponent},
+]
 
 const exports: any[] = [
     PageOneComponent,
@@ -13,9 +16,7 @@ const exports: any[] = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild([
-        {path: '', component: PageOneComponent},
-    ])
+    RouterModule.forChild(ROUTES),
   ],
   exports,
 })

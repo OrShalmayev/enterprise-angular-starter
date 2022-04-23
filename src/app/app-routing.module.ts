@@ -8,7 +8,6 @@ const routes: Routes = [
         pathMatch: 'full', 
         component: AppLayoutComponent,
     },
-
 ];
 
 @NgModule({

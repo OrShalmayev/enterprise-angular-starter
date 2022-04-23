@@ -2,6 +2,7 @@
     <app-navigation></app-navigation>
     <div class="body">
         <router-outlet></router-outlet>
+        <ng-container *ngIf="routerEventsLoading$|async">Loading route config...</ng-container>
     </div>
     <app-footer></app-footer>
 </ng-container>

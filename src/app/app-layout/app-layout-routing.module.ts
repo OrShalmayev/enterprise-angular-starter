@@ -6,6 +6,12 @@ const routes: Routes = [
     {
         path: '', 
         component: AppLayoutComponent,
+        children: [
+            {
+                path: 'page-1',
+                loadChildren: () => import('../modules/@pages/page-one/page-one.module').then(m => m.PageOneModule),
+            }
+        ]
     },
 ];
 

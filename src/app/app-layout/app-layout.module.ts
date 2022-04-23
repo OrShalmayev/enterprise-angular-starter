@@ -8,7 +8,7 @@ const exports: any[] = [
     AppLayoutComponent,
 ];
 @NgModule({
-    imports: [CommonModule, AppLayoutRoutingModule,ThemeModule,],
+    imports: [CommonModule, AppLayoutRoutingModule],
     declarations: [
         ...exports,
     ],

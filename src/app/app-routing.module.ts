@@ -6,9 +6,6 @@ const routes: Routes = [
         path: '', 
         pathMatch: 'full', 
         loadChildren: ()=> import('./app-layout/app-layout.module').then(m=>m.AppLayoutModule),
-        children: [
-            
-        ]
     },
 
 ];

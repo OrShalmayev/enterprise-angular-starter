@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-app-layout',
   templateUrl: './app-layout.component.html',
   styleUrls: ['./app-layout.component.scss']
 })
-export class AppLayoutComponent{}
+export class AppLayoutComponent{
+    constructor() { }
+    ngOnInit(): void {
+        
+    }
+}

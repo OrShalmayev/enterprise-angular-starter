@@ -17,4 +17,4 @@ const exports: any[] = [
   ],
   exports,
 })
-export class themeModule { }
+export class ThemeModule { }

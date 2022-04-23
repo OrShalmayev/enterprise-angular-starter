@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --environment=prod && tar -zcvf archive.tar.gz dist/ngrx-best-practice/*"
   },
   "private": true,
   "dependencies": {

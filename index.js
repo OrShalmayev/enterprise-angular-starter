@@ -10,6 +10,7 @@ app.use(compression({
     level: 9
 }));
 
+
 app.get('/*', function(req,res) {
     res.sendFile(path.join(__dirname+'/dist/ngrx-best-practice/index.html'));
 });

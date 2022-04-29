@@ -1,8 +1,8 @@
 <ng-container>
-    <app-navigation></app-navigation>
-    <div class="body">
-        <router-outlet></router-outlet>
-        <ng-container *ngIf="loadingRoute$|async">Loading route config...</ng-container>
-    </div>
-    <app-footer></app-footer>
+	<app-navigation></app-navigation>
+	<div class="body">
+		<router-outlet></router-outlet>
+		<ng-container *ngIf="loadingRoute$|async">Loading route config...</ng-container>
+	</div>
+	<app-footer></app-footer>
 </ng-container>

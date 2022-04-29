@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppLayoutComponent } from './app-layout/app-layout.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppLayoutComponent} from './app-layout/app-layout.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ThemeModule } from './modules/@theme/theme.module';
-import { HomeComponent } from './home/home.component';
-import { StoreModule } from '@ngrx/store';
-import { appReducer } from './state/app.state';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from 'src/environments/environment';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { CustomSerializer } from './state/router/custome-serializer';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ThemeModule} from './modules/@theme/theme.module';
+import {HomeComponent} from './home/home.component';
+import {StoreModule} from '@ngrx/store';
+import {appReducer} from './state/app.state';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from 'src/environments/environment';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
+import {CustomSerializer} from './state/router/custome-serializer';
+import {CoreModule} from "./modules/@core/core.module";
 
 const NGRX_MODULES = [
     StoreModule.forRoot(appReducer),
@@ -25,19 +26,22 @@ const NGRX_MODULES = [
         serializer: CustomSerializer,
     }),
 ];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    AppLayoutComponent,
-    HomeComponent,
-  ],
-  imports: [
-    BrowserModule,
-    ThemeModule,
-    AppRoutingModule,
-    ...NGRX_MODULES,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AppLayoutComponent,
+        HomeComponent,
+    ],
+    imports: [
+        BrowserModule,
+        ThemeModule,
+        AppRoutingModule,
+        CoreModule.forRoot(),
+        ...NGRX_MODULES,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,31 +1,21 @@
+/**
+ * Modules
+ */
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {AppLayoutComponent} from './app-layout/app-layout.component';
-
 import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
 import {ThemeModule} from './modules/@theme/theme.module';
-import {HomeComponent} from './home/home.component';
-import {StoreModule} from '@ngrx/store';
-import {appReducer} from './state/app.state';
-import {EffectsModule} from '@ngrx/effects';
-import {StoreDevtoolsModule} from '@ngrx/store-devtools';
-import {environment} from 'src/environments/environment';
-import {StoreRouterConnectingModule} from '@ngrx/router-store';
-import {CustomSerializer} from './state/router/custome-serializer';
 import {CoreModule} from "./modules/@core/core.module";
+import {SharedModule} from "./modules/shared";
+import {NGRX_MODULES} from "./state";
 
-const NGRX_MODULES = [
-    StoreModule.forRoot(appReducer),
-    EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({
-        maxAge: 25,
-        logOnly: environment.production,
-    }),
-    StoreRouterConnectingModule.forRoot({
-        serializer: CustomSerializer,
-    }),
-];
+/**
+ * Components
+ */
+import {AppLayoutComponent} from './app-layout/app-layout.component';
+import {AppComponent} from './app.component';
+import {HomeComponent} from './home/home.component';
+
 
 @NgModule({
     declarations: [
@@ -36,6 +26,7 @@ const NGRX_MODULES = [
     imports: [
         BrowserModule,
         ThemeModule,
+        SharedModule,
         AppRoutingModule,
         CoreModule.forRoot(),
         ...NGRX_MODULES,

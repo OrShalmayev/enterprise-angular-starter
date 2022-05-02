@@ -2,7 +2,7 @@
 	<app-navigation></app-navigation>
 	<div class="body">
 		<router-outlet></router-outlet>
-		<ng-container *ngIf="loadingRoute$|async">Loading route config...</ng-container>
+		<shared-route-loading *ngIf="loadingRoute$|async"></shared-route-loading>
 	</div>
 	<app-footer></app-footer>
 </ng-container>

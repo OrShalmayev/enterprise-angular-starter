@@ -21,7 +21,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     │   │    ├── @pages              # application pages
     │   │    ├── @preload              # module that preloads external packages
     │   │    ├── @theme              # theme folder
-    │   │    ├── @shared              # shared components pipes directives and services
+    │   │    ├── material              
+    │   │    ├── shared              # shared components pipes directives and services
     │   │    └── ...
     │   ├── settings 
     │   ├── state

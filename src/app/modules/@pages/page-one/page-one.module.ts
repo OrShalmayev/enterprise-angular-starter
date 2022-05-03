@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PageOneComponent} from './page-one.component';
 import {RouterModule} from '@angular/router';
+import {SharedModule} from "../../shared";
 
 const ROUTES = [
     {path: '', component: PageOneComponent},
@@ -17,6 +18,7 @@ const exports: any[] = [
     ],
     imports: [
         CommonModule,
+        SharedModule,
         RouterModule.forChild(ROUTES),
     ],
     exports,

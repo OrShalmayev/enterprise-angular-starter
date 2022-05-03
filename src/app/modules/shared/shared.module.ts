@@ -1,10 +1,10 @@
 import {NgModule} from "@angular/core";
 import {RouteLoadingComponent} from './components/route-loading/route-loading.component';
-import {LetDirective} from "./directives";
+import {NgLetDirective} from "./directives/";
 
 const exports: any[] = [
     RouteLoadingComponent,
-    LetDirective,
+    NgLetDirective,
 ];
 
 @NgModule({
@@ -14,9 +14,7 @@ const exports: any[] = [
     imports: [
     ],
     providers: [],
-    exports: [
-        ...exports,
-    ],
+    exports,
 })
 export class SharedModule {
 }

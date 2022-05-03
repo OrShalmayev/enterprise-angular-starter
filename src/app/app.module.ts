@@ -26,9 +26,9 @@ import {HomeComponent} from './home/home.component';
     imports: [
         BrowserModule,
         ThemeModule,
-        SharedModule,
         AppRoutingModule,
         CoreModule.forRoot(),
+        SharedModule,
         ...NGRX_MODULES,
     ],
     providers: [],

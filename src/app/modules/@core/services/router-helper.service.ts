@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RouteConfigLoadEnd, RouteConfigLoadStart, Router } from '@angular/router';
+import {RouteConfigLoadEnd, RouteConfigLoadStart, Router, RouterEvent} from '@angular/router';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -11,6 +11,9 @@ export class RouterHelperService {
 
     loadingRoute$ = this.router.events.pipe(
         map((event:any) => {
+            if (event?.route?.data?.preload) {
+                return false;
+            }
             if (event instanceof RouteConfigLoadStart) {
                 return true;
             } else if (event instanceof RouteConfigLoadEnd) {

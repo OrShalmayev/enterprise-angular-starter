@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AppLayoutComponent} from './app-layout/app-layout.component';
 import {HomeComponent} from './home/home.component';
-import {CustomPreloadingStrategyService} from "./modules/@core/services/custom-preloading-strategy.service";
+import {CustomPreloadingStrategyService} from "./modules/@core/services";
 
 const routes: Routes = [
     {

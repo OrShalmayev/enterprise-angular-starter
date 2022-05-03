@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngrx-best-practice": {
+    "best-angular-starter": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngrx-best-practice",
+            "outputPath": "dist/best-angular-starter",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngrx-best-practice:build:production"
+              "browserTarget": "best-angular-starter:build:production"
             },
             "development": {
-              "browserTarget": "ngrx-best-practice:build:development"
+              "browserTarget": "best-angular-starter:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngrx-best-practice:build"
+            "browserTarget": "best-angular-starter:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "ngrx-best-practice"
+  "defaultProject": "best-angular-starter"
 }

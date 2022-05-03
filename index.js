@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const compression = require('compression')
-app.use(express.static(__dirname + '/dist/ngrx-best-practice'));
+app.use(express.static(__dirname + '/dist/best-angular-starter'));
 app.use(compression({
     filter: function (req, res) {
       return (/json|text|javascript|css|font|svg/).test(res.getHeader('Content-Type'));
@@ -12,7 +12,7 @@ app.use(compression({
 
 
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname+'/dist/ngrx-best-practice/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/best-angular-starter/index.html'));
 });
 
 app.listen(process.env.PORT || 8080);

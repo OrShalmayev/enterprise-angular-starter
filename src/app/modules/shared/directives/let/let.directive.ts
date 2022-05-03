@@ -20,22 +20,24 @@ class NgLetContext<T> {
     selector: '[ngLet]',
 })
 export class NgLetDirective<T = unknown> implements OnInit {
-    constructor(private _viewContainer: ViewContainerRef, private templateRef: TemplateRef<NgLetContext<T>>) {
-    }
-
     private _context = new NgLetContext<T>();
 
-    static ngTemplateContextGuard<T>(dir: NgLetDirective<T>, ctx: any): ctx is NgLetContext<NonNullable<T>> {
-        return true;
+    @Input('ngLet') set ngLet(value: T) {
+        this._context.setData(value);
     }
 
-    @Input()
-    set ngLet(value: T) {
-        this._context.setData(value);
+    constructor(
+        private _viewContainer: ViewContainerRef,
+        private templateRef: TemplateRef<NgLetContext<T>>
+    ) {
     }
 
     ngOnInit(): void {
         this._viewContainer.clear();
         this._viewContainer.createEmbeddedView(this.templateRef, this._context);
+    }
+
+    static ngTemplateContextGuard<T>(dir: NgLetDirective<T>, ctx: any): ctx is NgLetContext<NonNullable<T>> {
+        return true;
     }
 }

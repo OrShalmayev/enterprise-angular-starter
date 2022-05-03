@@ -1,6 +1,6 @@
 # best-angular-starter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+The best Angular starter for medium to large apps.
 
 ## Folders architecture:
     src
@@ -29,3 +29,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     │   ├── styles  
     |   └── ...
     └── ...
+    
+    
+# Angular version
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.

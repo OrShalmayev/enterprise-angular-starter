@@ -22,7 +22,7 @@ const routes: Routes = [
     },
     {
         path: 'preload-all-material-modules',
-        data: {preload: true, loadAfterSeconds: 5},
+        data: {preload: true, loadAfterSeconds: 3},
         loadChildren: () => import('./modules/@preload/preload.module').then(m => m.PreloadModule.allMaterialModules()),
         redirectTo: ''
     }

@@ -1,16 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {RouteConfigLoadEnd, RouteConfigLoadStart, Router, RouterEvent} from '@angular/router';
-import { map } from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class RouterHelperService {
 
-    constructor(private router: Router) { }
+    constructor(private router: Router) {
+    }
 
     loadingRoute$ = this.router.events.pipe(
-        map((event:any) => {
+        map((event: any) => {
             if (event?.route?.data?.preload) {
                 return false;
             }
@@ -19,7 +20,7 @@ export class RouterHelperService {
             } else if (event instanceof RouteConfigLoadEnd) {
                 return false;
             }
-            return false
+            return false;
         })
     );
 }

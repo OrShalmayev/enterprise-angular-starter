@@ -1,0 +1,87 @@
+.modal {
+  background-color: rgba(250, 250, 250, 0.9);
+}
+.modal-backdrop {
+  &.show {
+    opacity: 0;
+  }
+  background-color: #fafafa;
+}
+.modal-content {
+  box-shadow: 0 0 5px 0 rgba(136, 136, 136, 0.9);
+  border: 0;
+}
+
+.modal-header {
+  align-items: center;
+  min-height: 43px;
+  padding: 0 1rem;
+  background-color: #f2f5f7;
+  border-bottom-color: transparent;
+  position: relative;
+
+  .modal-title {
+    font-size: $h5-font-size;
+    font-weight: 500;
+    font-family: $font-family-base;
+  }
+
+  .close,
+  .modal-title {
+    color: $headings-color;
+  }
+
+  .close {
+    font-size: 15px;
+    padding: 12px;
+    margin: 0 0 0 auto;
+    position: absolute;
+    right: 0;
+    opacity: 1;
+  }
+}
+
+.modal-footer {
+  border-top: 0;
+  .btn {
+    min-width: 140px;
+    &:not(:last-child):not(.transitionNone) {
+      margin-right: 25px;
+    }
+  }
+}
+
+.modal-nova-familia {
+  width: 445px;
+  max-width: 445px;
+}
+
+.modal-lista-responsaveis {
+  max-width: 445px;
+}
+
+.modal-envio-cotacao {
+  max-width: 920px;
+}
+
+.modal-restricoes-da-obra {
+  max-width: 835px;
+}
+
+.modal-xxl {
+  @media (min-width: 600px) {
+    max-width: 500px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 800px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1600px) {
+    max-width: 1540px;
+  }
+}

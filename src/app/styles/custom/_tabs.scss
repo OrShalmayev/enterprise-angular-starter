@@ -1,0 +1,231 @@
+@import 'variables';
+
+.tabs-steps,
+.questionario-steps {
+  .nav-pills {
+    li {
+      ul {
+        margin-right: 30px;
+      }
+      & + li {
+        position: relative;
+        margin-top: 40px;
+        &:after {
+          content: '';
+          position: absolute;
+          height: 40px;
+          width: 1px;
+          background: $headings-color;
+          top: 0;
+          left: 34px;
+          transform: translate(-20%, -40px);
+        }
+      }
+    }
+  }
+  .tab-content {
+    width: 100%;
+    height: auto;
+
+    app-tab-datas {
+      padding-left: 12.3rem;
+    }
+    @include media-breakpoint-down(md) {
+      app-tab-datas {
+        padding-left: unset;
+      }
+    }
+  }
+  .tab-container {
+    margin-top: 24px;
+  }
+  .form-group-heading {
+    font-weight: 500;
+  }
+  label {
+    font-weight: normal;
+  }
+  .form-group-heading,
+  label {
+    color: $headings-color;
+  }
+}
+
+@keyframes opacity-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tabs-steps,
+.questionario-steps,
+.modalTabs > {
+  .nav-pills {
+    .nav-link {
+      padding-bottom: 0;
+      padding-top: 0;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      cursor: pointer;
+      .tab-indicator,
+      .title {
+        display: inline-flex;
+        max-width: 85px;
+      }
+
+      .tab-indicator {
+        position: relative;
+        border-radius: 50%;
+        color: $headings-color;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid $headings-color;
+        font-weight: bold;
+        width: 35px;
+        min-width: 35px;
+        height: 35px;
+        margin-right: 10px;
+        background-color: white;
+        @include transition-input-focus-color();
+      }
+
+      .title {
+        font-weight: 500;
+        color: $tooltip-color;
+        line-height: normal;
+      }
+
+      &.active {
+        .tab-indicator {
+          background: $headings-color;
+          color: white;
+        }
+        .title {
+          color: $headings-color;
+        }
+        cursor: default;
+      }
+      &.disabled {
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .tab-pane {
+    &.active {
+      animation: opacity-animation 300ms ease-out;
+    }
+  }
+}
+
+.tabs-scroller-container {
+  .tab-container,
+  & {
+    display: block;
+    position: relative;
+  }
+
+  .nav-tabs {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      /* WebKit */
+      display: none;
+    }
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+
+    li {
+      &:last-child {
+        a {
+          margin-right: 31px;
+        }
+      }
+    }
+
+    .tab-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+  }
+
+  .scroller {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    transition: opacity 0.5s linear;
+    pointer-events: none;
+    height: 56px;
+    background-color: white;
+    z-index: 1;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    &.show {
+      opacity: 1;
+      pointer-events: unset;
+    }
+
+    &.right {
+      right: 0;
+    }
+
+    &.left {
+      left: 0;
+    }
+  }
+}
+
+.tabset-definicao-escopo {
+  > .tab-content {
+    > .tab-pane {
+      position: relative;
+      &:not(.distribuir) {
+        padding: $spacing * 2;
+      }
+    }
+  }
+  > .nav-tabs {
+    border-bottom: 10px solid var(--very-light-blue);
+    > .nav-item {
+      > .nav-link {
+        border: 0;
+        margin: 0 2px;
+        font-weight: bold;
+        color: var(--greyish-brown);
+        opacity: 0.5;
+        &.active {
+          background-color: var(--very-light-blue);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@keyframes run {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}

@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './app/styles/theme';
+// Palette
+:root {
+	--cerulean              : #019bcf;
+	--shamrock-green        : #00d46c;
+	--orangey-red           : #fb2525;
+	--dusty-teal            : #4fa4a1;
+	--steel                 : #7b8594;
+	--light-blue-grey       : #ccd2d7;
+	--bluey-grey            : #9ea1ae;
+	--brownish-grey         : #787878;
+	--greyish-brown         : #3c3c3c;
+	--golden                : #f7bd00;
+	--pale-grey             : #f6feff;
+	--ice-blue-alt          : #e4fafe;
+	--powder-blue           : #ace0fd;
+	--pale-blue             : #cff2fe;
+	--ice-blue              : #f2f5f7;
+	--very-light-blue       : #e7ecef;
+	--light-peach           : #fbc5c4;
+	--very-light-pink-alt-1 : #fbe1e0;
+	--tiffany-blue-54       : rgba(119, 227, 218, 0.54);
+	--very-light-pink-alt   : #fef8f7;
+	--tiffany-blue-15       : rgba(119, 227, 218, 0.15);
+	--very-light-pink       : #fceeee;
+	--cerulean-two          : #048dbc;
+	--greyblue              : #6fa2b4;
+	--sea                   : #42a298;
+}
+
+.pointer-events-none {
+	pointer-events : none;
+}
+
+.c-pointer {
+	cursor : pointer;
+}
+
+.collapse-caret {
+	color     : $primary;
+	font-size : 5px;
+	cursor    : pointer;
+}
+
+html {
+	::-webkit-scrollbar {
+		height : 15px;
+		width  : 10px !important;
+	}
+
+	overflow : auto;
+
+	body {
+		-webkit-font-smoothing  : antialiased;
+		-moz-osx-font-smoothing : grayscale;
+		height                  : auto;
+		overflow                : unset !important;
+	}
+}
+
+

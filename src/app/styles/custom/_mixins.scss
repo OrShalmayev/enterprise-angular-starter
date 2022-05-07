@@ -1,0 +1,36 @@
+@import 'mixins/forms';
+@import 'mixins/inputs';
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: #{alpha(opacity=$opacity-ie)};
+}
+
+@mixin project-name {
+  margin-bottom: 0;
+  strong {
+    font-weight: bold;
+    margin-right: 6px;
+  }
+}
+
+@mixin custom-scrollbar {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f7f7f7;
+    border-radius: 3.5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #9ea1ae;
+    border-radius: 3.5px;
+    &:hover {
+      background: #888;
+    }
+  }
+}

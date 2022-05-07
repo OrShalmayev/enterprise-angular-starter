@@ -1,0 +1,52 @@
+.input-group {
+  &.has-danger,
+  &.has-success {
+    &:after {
+      display: none;
+    }
+  }
+  &.has-danger {
+    .input-group-append {
+      .input-group-text {
+        border-color: $danger;
+        color: $danger;
+      }
+    }
+    .error {
+      display: block;
+      width: 100%;
+      margin-top: 3px;
+    }
+  }
+  .input-group-prepend {
+    .input-group-text {
+      background-color: white;
+      border-top-left-radius: $input-border-radius !important;
+      border-bottom-left-radius: $input-border-radius !important;
+    }
+    + .form-control {
+      border-top-right-radius: $input-border-radius !important;
+      border-bottom-right-radius: $input-border-radius !important;
+    }
+  }
+  .input-group-append {
+    .input-group-text {
+      background-color: white;
+      border-top-right-radius: $input-border-radius !important;
+      border-bottom-right-radius: $input-border-radius !important;
+    }
+    + .form-control {
+      border-right: 0;
+      border-top-left-radius: $input-border-radius !important;
+      border-bottom-left-radius: $input-border-radius !important;
+    }
+  }
+
+  &.input-group-xs {
+    height: calc((1.5em + 0.5rem + 2px) / 1.5);
+    .input-group-prepend,
+    .input-group-prepend {
+      height: calc((1.5em + 0.5rem + 2px) / 1.5);
+    }
+  }
+}

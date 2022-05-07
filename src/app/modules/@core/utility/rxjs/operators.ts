@@ -5,6 +5,7 @@ import { uniqBy } from 'lodash';
 
 export const uniqByOperator = <T = any>(property: keyof T) => map<T[], T[]>(array => uniqBy(array, property));
 
+// @ts-ignore
 export const findArray = <T = any>(predicate: (item: T) => boolean) => map<T[], T>(array => array.find(predicate));
 
 export const refresh = <T = any, R = any>(observable: Observable<R>): MonoTypeOperatorFunction<T> =>

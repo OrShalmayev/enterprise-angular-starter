@@ -1,0 +1,38 @@
+@mixin input-size($padding-vertical, $padding-horizontal) {
+  padding: $padding-vertical $padding-horizontal;
+}
+
+@mixin form-control-placeholder($color, $opacity) {
+  .form-control::-moz-placeholder {
+    color: $color;
+    @include opacity(1);
+  }
+  .form-control:-moz-placeholder {
+    color: $color;
+    @include opacity(1);
+  }
+  .form-control::-webkit-input-placeholder {
+    color: $color;
+    @include opacity(1);
+  }
+  .form-control:-ms-input-placeholder {
+    color: $color;
+    @include opacity(1);
+  }
+}
+
+@mixin placeholder() {
+  &::-moz-placeholder {
+    @content;
+  } // Firefox
+  &:-ms-input-placeholder {
+    @content;
+  } // Internet Explorer 10+
+  &::-webkit-input-placeholder {
+    @content;
+  } // Safari and Chrome
+}
+
+@mixin transition-input-focus-color() {
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}

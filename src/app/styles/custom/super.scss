@@ -1,0 +1,30 @@
+@import 'variables';
+// @import 'mixins';
+
+.tipo-projeto {
+  color: #048dbc;
+}
+
+.tipo-obra {
+  color: #4d8012;
+}
+
+.card {
+  margin-bottom: 20px;
+
+  .card-header {
+    background-color: #787878;
+    padding: 8px 10px 8px 20px;
+
+    .card-title {
+      margin-bottom: 0;
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  .card-body {
+    padding-bottom: 14px;
+    padding-top: 20px;
+  }
+}

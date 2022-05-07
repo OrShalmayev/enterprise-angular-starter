@@ -1,0 +1,194 @@
+/* Form controls */
+@use "sass:math";
+
+@include form-control-placeholder(#9ea1ae, 1);
+
+.form-control {
+  @include transition-input-focus-color();
+  font-family: Roboto, 'icomoon' !important;
+  font-size: math.div($font-size-base, 1.16);
+  color: $headings-color;
+
+  &:not(.form-control-sm):not(.form-control-lg) {
+    height: 35px;
+  }
+
+  .has-danger &,
+  .ng-touched.ng-invalid &,
+  .has-success & {
+    &.form-control-success,
+    &.form-control-danger {
+      background-image: none;
+    }
+  }
+
+  &.form-control-lg {
+    font-size: 1.1rem;
+    height: calc(1.5em + 1rem + 2px);
+  }
+
+  &.form-control-xs:not(textarea) {
+    @extend .form-control-sm;
+    height: calc((1.5em + 0.5rem + 2px) / 1.5);
+  }
+
+  &.ng-invalid.ng-touched {
+    border-color: $danger;
+
+    &:focus {
+      color: $danger;
+      box-shadow: 0 0 0 $input-btn-focus-width rgba($danger, 0.25);
+    }
+  }
+}
+
+.has-success,
+.has-danger {
+  position: relative;
+
+  &:after {
+    font-family: 'icomoon', sans-serif;
+    display: inline-block;
+    position: absolute;
+    font-size: $grid-gutter-width * 0.5;
+    top: 32.5px;
+    right: 15px;
+  }
+
+  &.form-control-lg {
+    &:after {
+      font-size: 13px;
+      top: 24px;
+    }
+  }
+
+  .form-control {
+    padding-right: 28px;
+  }
+}
+
+td.form-group.has-danger,
+td.form-group.has-success {
+  position: relative;
+
+  &:after {
+    top: 12.5px;
+    right: 30px;
+  }
+}
+
+.has-success {
+  &:after {
+    content: '\e913';
+    color: #00d46c;
+  }
+}
+
+.has-danger {
+  @include form-control-placeholder($danger, 1);
+
+  &:after {
+    content: '\e914';
+    color: $danger;
+  }
+}
+
+label {
+  color: $headings-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: 500;
+  margin-bottom: 5px;
+
+  &.error {
+    color: #9ea1ae;
+    font-size: math.div($font-size-base, 1.16);
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.custom-switch .custom-control-label {
+  &::before {
+    width: 50px;
+    background-color: #9ea1ae;
+    border-radius: 2.5rem;
+    height: 25px;
+    left: -2.35rem;
+    top: -1.5px;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  &::after {
+    height: 19px;
+    width: 19px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: calc(0.15625rem + -1px);
+  }
+}
+
+.custom-checkbox {
+  .custom-control-input {
+    &:not(:disabled) {
+      &:active {
+        ~ .custom-control-label::before {
+          background-color: #9ea1ae;
+          border-color: #9ea1ae;
+        }
+      }
+    }
+    &:indeterminate {
+      & ~ .custom-control-label::before {
+        background-color: $body-color;
+        border-color: $body-color;
+      }
+    }
+    &:disabled {
+      & ~ .custom-control-label::after {
+        cursor: not-allowed;
+      }
+      &:indeterminate {
+        & ~ .custom-control-label::before {
+          background-color: #adb5bd;
+          border-color: #adb5bd;
+        }
+        & ~ .custom-control-label::after {
+          cursor: not-allowed;
+        }
+      }
+      &:checked {
+        & ~ .custom-control-label::before {
+          background-color: #adb5bd;
+          border-color: #adb5bd;
+        }
+        ~ .custom-control-label::after {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.custom-switch {
+  .custom-control-input {
+    &:checked ~ .custom-control-label {
+      &::before {
+        color: #fff;
+        background-color: #00d46c;
+        box-shadow: none;
+        border-color: transparent;
+      }
+
+      &::after {
+        transform: translateX(1.5rem);
+      }
+    }
+  }
+}

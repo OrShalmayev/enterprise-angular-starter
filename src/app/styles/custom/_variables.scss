@@ -1,0 +1,140 @@
+$body-bg: #fafafa;
+$body-color: #3b3e41;
+
+//colors
+$blue: #019bcf;
+$white: #fff;
+$red: #fb2525;
+$green: #4d8012;
+$green-alt2: #00d46c;
+$yellow: #f7bd00;
+$blue-alt: #00c2f7;
+$gray: #3c3c3c;
+$light-gray: #f2f5f7;
+$light-gray-alt: #9ea1ae;
+$grey-light: #979797;
+$steel: #7b8594;
+$orange-dark: #f79500;
+$light-red: #fff4f4;
+$green-alt: #4fa4a1;
+$sea: #42a298;
+
+$gray-secondary: #ccd2d7; //caixa externa | nivel 1
+$very-light-blue: #e7ecef; //caixa interna / nivel 2
+$roxo: #a086fb;
+
+$cerulean: #048dbc;
+
+$bluey-grey: #9ea1ae;
+$primary: $blue;
+$secondary: #787878;
+$success: $green;
+$warning: $yellow;
+$warning-alt: #eda337;
+$danger: $red;
+$greyish-brown: #3c3c3c; //mais escuro
+$brownish-grey: #787878; //mais claro
+$theme-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'warning': $warning,
+    'danger': $danger,
+  ),
+  $theme-colors
+);
+
+$border-radius: 3px;
+
+// Typography
+$font-family-base: Roboto;
+$font-size-base: 0.875rem; //14px
+$small-font-size: 0.75rem; //12px
+$extra-small-font-size: 0.6rem; //8.4px
+$font-size-lg: $font-size-base * 1.25 !default; //15.26px
+$font-size-sm: $font-size-base * 0.875 !default; //10.71px
+
+$headings-font-family: $font-family-base;
+$headings-color: $gray;
+$h1-font-size: $font-size-base * 2 !default; // 28px
+$h2-font-size: $font-size-base * 1.57 !default; // 22px
+$h3-font-size: $font-size-base * 1.42 !default; //20px
+$h4-font-size: $font-size-base * 1.286 !default; //18px
+$h5-font-size: $font-size-base * 1.14 !default; //16px
+$h6-font-size: $font-size-base !default; //14px
+$font-size-normal: 1rem;
+
+$font-style-italic: italic;
+
+// Cards
+$card-border-radius: 3px;
+
+// Modals
+$modal-lg: 729px;
+$modal-content-border-radius: $border-radius;
+
+// Inputs
+$input-btn-focus-width: 0.2rem;
+$input-border-color: $gray;
+$input-focus-border-color: $input-border-color;
+$input-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba($input-border-color, 0.25);
+
+$custom-control-indicator-checked-bg: $body-color;
+
+// Tooltips
+$tooltip-arrow-color: white;
+$tooltip-bg: white;
+$tooltip-color: $light-gray-alt;
+$tooltip-font-size: 12px;
+
+// Popover
+$popover-arrow-color: white;
+$popover-bg: white;
+$popover-border-color: white;
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    5: 5%,
+    10: 10%,
+    13: 13%,
+    15: 15%,
+    20: 20%,
+    25: 25%,
+    30: 30%,
+    32: 32%,
+    35: 35%,
+    40: 40%,
+    45: 45%,
+    50: 50%,
+    55: 55%,
+    60: 60%,
+    65: 65%,
+    70: 70%,
+    75: 75%,
+    80: 80%,
+    85: 85%,
+    90: 90%,
+    95: 95%,
+    100: 100%,
+    auto: auto,
+  ),
+  $sizes
+);
+
+// Custom Spaces
+$spacing: 10px;
+
+// Shadow
+$box-shadow-overlay: 0 1px 22px 0 rgba(136, 136, 136, 0.5);
+$box-shadow-header: 3px 20px 20px -15px rgb(136 136 136 / 50%);
+
+// Sizes
+$header-height: 60px;
+$breadcrumbs-height: 35px;
+$header-breacrumbs-heigth: $header-height + $breadcrumbs-height;

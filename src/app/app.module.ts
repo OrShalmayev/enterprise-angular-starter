@@ -16,6 +16,13 @@ import {AppLayoutComponent} from './app-layout/app-layout.component';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 
+/**
+ * Tokens
+ */
+import {WINDOW_TOKEN} from "./modules/@core/tokens";
+import {DEFAULT_PIPE_TYPE, TDefaultPipeType} from "./modules/shared/pipes/default";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
     declarations: [
@@ -28,10 +35,17 @@ import {HomeComponent} from './home/home.component';
         ThemeModule,
         AppRoutingModule,
         CoreModule.forRoot(),
-        SharedModule,
+        SharedModule.forRoot(),
         ...NGRX_MODULES,
+        NgbModule,
     ],
-    providers: [],
+    providers: [
+        {provide: WINDOW_TOKEN, useValue: window},
+        {
+            provide: DEFAULT_PIPE_TYPE,
+            useValue: 'strict' as TDefaultPipeType,
+        },
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

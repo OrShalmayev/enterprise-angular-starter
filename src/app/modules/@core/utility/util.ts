@@ -1,20 +1,20 @@
-import { isFunction } from "lodash";
+import { isFunction, uniqBy, isNull } from "lodash";
 
-export function upsert<T>(
-  array1: T[],
-  array2: T[],
-  idKey: keyof T,
-  merger: (entity1: T, entity2: T) => T = (a, b) => ({ ...a, ...b })
-): T[] {
-  array1 ??= [];
-  array2 ??= [];
-  const ids = uniqBy([...array1, ...array2], idKey).map(o => o[idKey]);
-  return ids.reduce((acc, id) => {
-    const item1 = array1.find(o => o[idKey as string] === id);
-    const item2 = array2.find(o => o[idKey as string] === id);
-    return [...acc, { ...merger(item1, item2) }];
-  }, []);
-}
+// export function upsert<T>(
+//   array1: T[],
+//   array2: T[],
+//   idKey: keyof T,
+//   merger: (entity1: T, entity2: T) => T = (a, b) => ({ ...a, ...b })
+// ): T[] {
+//   array1 ??= [];
+//   array2 ??= [];
+//   const ids = uniqBy([...array1, ...array2], idKey).map(o => o[idKey]);
+//   return ids.reduce((acc, id) => {
+//     const item1 = array1.find(o => o[idKey as string] === id);
+//     const item2 = array2.find(o => o[idKey as string] === id);
+//     return [...acc, { ...merger(item1, item2) }];
+//   }, []);
+// }
 
 export function replaceNullWithUndefined<T extends Record<any, any>>(obj: T): T {
   return Object.entries(obj).reduce((acc, [key, value]) => ({ ...acc, [key]: value ?? undefined }), {}) as T;
@@ -58,7 +58,7 @@ export function findRight<T = any>(array: T[], predicate: (element: T, index: nu
 }
 
 export function isNotNil<T>(value: T): value is NonNullable<T> {
-  return !isNil(value);
+  return !isNull(value);
 }
 
 export function parseUrlFromGuard(url: string, redirectTo: string): string {

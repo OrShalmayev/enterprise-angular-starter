@@ -1,0 +1,27 @@
+table.table {
+  thead {
+    th {
+      &:first-of-type {
+        border-top-left-radius: $border-radius;
+      }
+      &:last-of-type {
+        border-top-right-radius: $border-radius;
+      }
+    }
+  }
+  .thead-gray {
+    th {
+      color: white;
+      background-color: #787878;
+      border-color: #9ea1ae;
+      font-size: $h4-font-size;
+      font-family: $font-family-base;
+      font-weight: 500;
+    }
+  }
+
+  td,
+  th {
+    padding: 6px 20px 7px;
+  }
+}

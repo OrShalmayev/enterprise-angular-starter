@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {PageOneComponent} from './page-one.component';
 import {RouterModule} from '@angular/router';
 import {SharedModule} from "../../shared";
+import {AllMaterialModule} from "../../material/material.module";
 
 const ROUTES = [
     {path: '', component: PageOneComponent},
@@ -19,6 +20,7 @@ const exports: any[] = [
     imports: [
         CommonModule,
         SharedModule,
+        AllMaterialModule,
         RouterModule.forChild(ROUTES),
     ],
     exports,

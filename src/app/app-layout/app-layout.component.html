@@ -1,8 +1,8 @@
-<ng-container>
+<ng-container >
+	<shared-route-loading *ngIf="(loadingRoute$|async)?.valueOf()"></shared-route-loading>
 	<app-navigation></app-navigation>
 	<div class="body">
 		<router-outlet></router-outlet>
-		<shared-route-loading *ngIf="(loadingRoute$|async)?.valueOf()"></shared-route-loading>
 	</div>
 	<app-footer></app-footer>
 </ng-container>

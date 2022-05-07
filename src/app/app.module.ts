@@ -39,10 +39,7 @@ import {DEFAULT_PIPE_TYPE, TDefaultPipeType} from "./modules/shared/pipes/defaul
     ],
     providers: [
         {provide: WINDOW_TOKEN, useValue: window},
-        {
-            provide: DEFAULT_PIPE_TYPE,
-            useValue: 'strict' as TDefaultPipeType,
-        },
+
     ],
     bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-.aw-spinner {
+.shared-spinner {
   display: block;
   font-size: 0;
   color: #fff;
@@ -6,7 +6,7 @@
   height: 32px;
 }
 
-.aw-spinner__internal {
+.shared-spinner__internal {
   position: relative;
   box-sizing: border-box;
   color: #4fa4a1;
@@ -18,15 +18,15 @@
   background: transparent;
   border-bottom-color: transparent;
   border-radius: 100%;
-  animation: aw-spinner--rotation 0.75s linear infinite;
+  animation: shared-spinner--rotation 0.75s linear infinite;
 }
 
-.aw-spinner--dark {
+.shared-spinner--dark {
   color: #333;
 }
 
-.aw-spinner--small {
-  .aw-spinner__internal {
+.shared-spinner--small {
+  .shared-spinner__internal {
     width: 16px;
     height: 16px;
     border-width: 1px;
@@ -35,27 +35,27 @@
   height: 16px;
 }
 
-.aw-spinner--medium {
+.shared-spinner--medium {
   width: 64px;
   height: 64px;
-  .aw-spinner__internal {
+  .shared-spinner__internal {
     width: 64px;
     height: 64px;
     border-width: 4px;
   }
 }
 
-.aw-spinner--large {
+.shared-spinner--large {
   width: 96px;
   height: 96px;
-  .aw-spinner__internal {
+  .shared-spinner__internal {
     width: 96px;
     height: 96px;
     border-width: 6px;
   }
 }
 
-@keyframes aw-spinner--rotation {
+@keyframes shared-spinner--rotation {
   0% {
     transform: rotate(0deg);
   }
@@ -67,7 +67,7 @@
   }
 }
 
-.aw-spinner__overlay {
+.shared-spinner__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -75,7 +75,7 @@
   height: 100%;
   background-color: rgba(250, 250, 250, 0.9);
   border-radius: inherit;
-  > .aw-spinner {
+  > .shared-spinner {
     top: 50%;
     left: 50%;
     margin: 0;
@@ -83,18 +83,18 @@
     transform: translate(-50%, -50%);
   }
 
-  > .aw-spinner__loading-text {
+  > .shared-spinner__loading-text {
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -60%);
   }
 
-  &.aw-spinner__overlay--no-background {
+  &.shared-spinner__overlay--no-background {
     background: transparent;
   }
 
-  &.aw-spinner__overlay--fullscreen {
+  &.shared-spinner__overlay--fullscreen {
     position: fixed;
   }
 }

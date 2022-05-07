@@ -1,0 +1,11 @@
+<div
+	class="shared-spinner"
+	[class.shared-spinner--small]="size === 'sm'"
+	[class.shared-spinner--medium]="size === 'md'"
+	[class.shared-spinner--large]="size === 'lg'"
+>
+	<div class="shared-spinner__internal"></div>
+</div>
+<div class="shared-spinner__loading-text" [style.z-index]="zIndex">
+	<ng-content></ng-content>
+</div>

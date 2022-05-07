@@ -19,9 +19,6 @@ import {HomeComponent} from './home/home.component';
 /**
  * Tokens
  */
-import {WINDOW_TOKEN} from "./modules/@core/tokens";
-import {DEFAULT_PIPE_TYPE, TDefaultPipeType} from "./modules/shared/pipes/default";
-
 
 @NgModule({
     declarations: [
@@ -37,10 +34,7 @@ import {DEFAULT_PIPE_TYPE, TDefaultPipeType} from "./modules/shared/pipes/defaul
         CoreModule.forRoot(),
         SharedModule.forRoot(),
     ],
-    providers: [
-        {provide: WINDOW_TOKEN, useValue: window},
-
-    ],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

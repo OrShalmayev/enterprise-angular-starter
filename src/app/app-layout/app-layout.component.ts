@@ -1,8 +1,6 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {RouterHelperService} from "../modules/@core/services";
-import {MatDialog} from "@angular/material/dialog";
-import {GeneralDialogComponent} from "../modules/shared/components";
 
 @Component({
     selector: 'app-app-layout',
@@ -12,9 +10,11 @@ import {GeneralDialogComponent} from "../modules/shared/components";
 })
 export class AppLayoutComponent {
     loadingRoute$!: Observable<boolean>;
+    test: any;
 
     constructor(
         private routerHelper: RouterHelperService,
+
     ) {
     }
 

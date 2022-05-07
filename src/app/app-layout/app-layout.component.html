@@ -2,6 +2,7 @@
 	<shared-route-loading *ngIf="(loadingRoute$|async)?.valueOf()"></shared-route-loading>
 	<app-navigation></app-navigation>
 	<div class="body">
+		{{test | default: 'testing default value'}}
 		<router-outlet></router-outlet>
 	</div>
 	<app-footer></app-footer>

@@ -1,23 +1,16 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AppLayoutComponent} from './app-layout/app-layout.component';
-import {HomeComponent} from './home/home.component';
 import {CustomPreloadingStrategyService} from "./modules/@core/services";
 
 const routes: Routes = [
     {
         path: '',
-        component: AppLayoutComponent,
         children: [
             {
-                path: 'pages',
-                loadChildren: () =>
-                    import('./modules/@pages/pages.module').then(m => m.PagesModule),
-            },
-            {
                 path: '',
-                component: HomeComponent
-            }
+                loadChildren: () =>
+                    import('./app-layout/app-layout.module').then(m => m.AppLayoutModule),
+            },
         ]
     },
     {

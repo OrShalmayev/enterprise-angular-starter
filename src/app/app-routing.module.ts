@@ -25,11 +25,21 @@ const routes: Routes = [
         data: {preload: true, loadAfterSeconds: 3},
         loadChildren: () => import('./modules/@preload/preload.module').then(m => m.PreloadModule.allMaterialModules()),
         redirectTo: ''
-    }
+    },
+    {
+        path: '**',
+        redirectTo: '',
+    },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {preloadingStrategy: CustomPreloadingStrategyService})],
+    imports: [RouterModule.forRoot(routes, {
+        preloadingStrategy: CustomPreloadingStrategyService,
+        paramsInheritanceStrategy: 'always',
+        enableTracing: false,
+        scrollPositionRestoration: 'enabled',
+    }),
+    ],
     exports: [RouterModule]
 })
 export class AppRoutingModule {

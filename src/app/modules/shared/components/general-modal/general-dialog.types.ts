@@ -1,7 +1,5 @@
 import { BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
-import {GeneralModalComponent} from "./general-modal.component";
-import {TSharedButtonStatus} from "..";
-import {TSharedButtonWidth} from "../util";
+import {GeneralDialogComponent} from "./general-dialog.component";
 
 export interface IGeneralModalOptions {
     status: TGeneralModalStatus;
@@ -13,14 +11,13 @@ export interface IGeneralModalOptions {
     contentClass?: string;
     primaryBtn?: IGeneralModalBtnOptions;
     secondaryBtn?: IGeneralModalBtnOptions;
-    bsModalOptions?: ModalOptions<GeneralModalComponent>;
 }
 
 export interface IGeneralModalBtnOptions {
     title?: string;
-    status?: TSharedButtonStatus;
+    status?: any;
     action?: (bsModalRef: BsModalRef) => any;
-    useDefaultWidth?: TSharedButtonWidth;
+    useDefaultWidth?: any;
 }
 
 export type TGeneralModalStatus = 'error' | 'success' | 'info' | 'warning';

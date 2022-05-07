@@ -6,7 +6,7 @@ import {environment} from "../../environments/environment";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import {CustomSerializer} from "./router/custome-serializer";
 
-export const NGRX_MODULES = [
+export const NGRX_MODULES:any[] = [
     StoreModule.forRoot(appReducer),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({

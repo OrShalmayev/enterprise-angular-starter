@@ -15,51 +15,43 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
-
-export const MAT_BASIC_MODULES = [
+export const BASIC_MAT_MODULES:any[] = [
     MatButtonModule,
     MatInputModule,
-    MatRadioModule,
     MatSelectModule,
+    MatRadioModule,
+    MatFormFieldModule,
 ];
-
-export const MAT_ALL_MODULES = [
-    ...MAT_BASIC_MODULES,
+export const MAT_MODULES:any[] = [
+    BASIC_MAT_MODULES,
     MatToolbarModule,
     MatMenuModule,
-    MatListModule,
-    MatIconModule,
-    MatCardModule,
-    MatFormFieldModule,
     MatSidenavModule,
     MatAutocompleteModule,
     MatTabsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    MatSlideToggleModule,
 ];
 
 @NgModule({
     declarations: [],
-    imports: [CommonModule],
-    exports: [],
+    imports: [CommonModule, ...MAT_MODULES],
+    exports: [MAT_MODULES],
 })
-export class MaterialModule {
-    static basicModules(): ModuleWithProviders<MaterialModule> {
-        return {
-            ngModule: MaterialModule,
-            providers: [
-                ...MAT_BASIC_MODULES,
-            ]
-        };
-    }
+export class AllMaterialModule {}
 
-    static allModules(): ModuleWithProviders<MaterialModule> {
-        return {
-            ngModule: MaterialModule,
-            providers: [
-                ...MAT_ALL_MODULES,
-            ]
-        };
-    }
-}
+@NgModule({
+    declarations: [],
+    imports: [CommonModule, ...BASIC_MAT_MODULES],
+    exports: [BASIC_MAT_MODULES],
+})
+export class BasicMaterialModule {}

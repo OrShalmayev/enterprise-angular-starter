@@ -7,20 +7,22 @@ import {CommonModule} from "@angular/common";
 /**
  * Components
  */
-import {GeneralModalComponent, RouteLoadingComponent, SharedButtonComponent} from "./components";
+import {RouteLoadingComponent} from "./components";
 /**
  * Pipes
  */
 import {DefaultPipe} from "./pipes/default";
+import {SharedSpinnerComponent} from './components/shared-spinner/shared-spinner.component';
+import {SharedSpinnerDirective} from "./components/shared-spinner/shared-spinner.directive";
 
 const COMPONENTS: any[] = [
     RouteLoadingComponent,
     NgLetDirective,
-    GeneralModalComponent,
-    SharedButtonComponent,
+    SharedSpinnerComponent,
 ];
 const DIRECTIVES: any[] = [
     DefaultPipe,
+    SharedSpinnerDirective,
 ];
 const PIPES: any[] = [];
 const MODULES: any[] = [CommonModule];

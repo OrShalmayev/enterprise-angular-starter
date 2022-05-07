@@ -7,7 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {ThemeModule} from './modules/@theme/theme.module';
 import {CoreModule} from "./modules/@core/core.module";
 import {SharedModule} from "./modules/shared";
-import {NGRX_MODULES} from "./state";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 /**
  * Components
@@ -21,7 +21,6 @@ import {HomeComponent} from './home/home.component';
  */
 import {WINDOW_TOKEN} from "./modules/@core/tokens";
 import {DEFAULT_PIPE_TYPE, TDefaultPipeType} from "./modules/shared/pipes/default";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -34,10 +33,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         BrowserModule,
         ThemeModule,
         AppRoutingModule,
+        BrowserAnimationsModule,
         CoreModule.forRoot(),
         SharedModule.forRoot(),
-        ...NGRX_MODULES,
-        NgbModule,
     ],
     providers: [
         {provide: WINDOW_TOKEN, useValue: window},

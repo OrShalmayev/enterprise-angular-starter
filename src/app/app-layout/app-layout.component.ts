@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RouterHelperService } from '../modules/@core/services';
-import { StateComponent } from '../modules/shared/directives/state/state-component.directive';
+import { StateComponent } from '../modules/shared/directives';
 
 export interface IAppLayoutState {
     loadingRoute$: Observable<boolean>;

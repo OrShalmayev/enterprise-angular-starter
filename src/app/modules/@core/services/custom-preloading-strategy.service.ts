@@ -6,9 +6,6 @@ import {map} from "rxjs/operators";
 @Injectable({
     providedIn: 'root'
 })
-@Injectable({
-    providedIn: 'root'
-})
 export class CustomPreloadingStrategyService implements PreloadingStrategy {
     preload(route: Route, fn: () => Observable<any>): Observable<any> {
         const loadRoute = (delay: number) => delay > 0 ? timer(delay * 1000).pipe(map(() => fn())) : fn();

@@ -1,0 +1,46 @@
+<ng-container *ngIf="{
+    isAllOrganizationsSelected: isAllOrganizationsSelected$ | async,
+    organizations: organizations$ | async,
+    loadingOrganizations: loadingOrganizations$ | async,
+    filteredOrganizations: filteredOrganizations$ | async,
+    listHeight: listHeight$ | async
+} as viewModel">
+    <mat-accordion displayMode="flat" multi>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title class="flex justify-between">
+                    <mat-checkbox
+                            (click)="$event.stopPropagation()"
+                            color="primary"
+                            (change)="$event ? toggleOrganizations(viewModel.organizations, viewModel.isAllOrganizationsSelected) : null"
+                            [checked]="organizationsSelection.hasValue() && viewModel.isAllOrganizationsSelected"
+                            [disabled]="viewModel.loadingOrganizations"
+                    >
+                        {{ 'DbActions.getOceanCustomersByCriteria.organizations' | translate }}
+                    </mat-checkbox>
+                    <mat-spinner *ngIf="viewModel.loadingOrganizations" diameter="15"></mat-spinner>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!--            Search Organization -->
+            <mat-form-field appearance="outline" floatLabel="always" class="w-100">
+                <mat-label>{{ 'DbActions.getOceanCustomersByCriteria.searchOrganization' | translate }}</mat-label>
+                <input matInput type="text" [formControl]="searchOrganizationControl">
+            </mat-form-field>
+            <!--            Organizations List-->
+            <cdk-virtual-scroll-viewport [itemSize]="dropDownItemHeight" [style.height]="viewModel.listHeight">
+                <ul *ngIf="viewModel.filteredOrganizations?.length">
+                    <li *cdkVirtualFor="let org of viewModel.filteredOrganizations"
+                        class="h-[{{dropDownItemHeight + 'px'}}] py-1 px-4">
+                        <span class="mr-10"></span>
+                        <mat-checkbox
+                                color="primary"
+                                [checked]="organizationsSelection.isSelected(org)"
+                                (change)="$event ? organizationsSelection.toggle(org) : null"
+                                (click)="$event.stopPropagation()"
+                        >{{org}}</mat-checkbox>
+                    </li>
+                </ul>
+            </cdk-virtual-scroll-viewport>
+        </mat-expansion-panel>
+    </mat-accordion>
+</ng-container>
